@@ -81,8 +81,8 @@ props.put(&apos;tokenReferenceID&apos;, line.toString());</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">20</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">180</stringProp>
+        <stringProp name="ThreadGroup.num_threads">3</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">18</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
@@ -104,61 +104,15 @@ props.put(&apos;tokenReferenceID&apos;, line.toString());</stringProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MDES_authorizeService" enabled="true">
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-&quot;requestId&quot;:&quot;${requestID}&quot;,&#xd;
-&quot;services&quot;:[&#xd;
-&quot;DIGITIZATION&quot;&#xd;
-],&#xd;
-&quot;cardInfo&quot;:{&#xd;
-&quot;encryptedData&quot; : &quot;2887FB5238FD2EDDBB33D971A5169271EDDCE21CA79562B75B4072987CA8B7102CF2B227A730D2925A1EF105A54405B0D0271043D3D0520E916FD055C8D222796A80FFCD0ACC01DCF6A5DCCA1E3335697F02581838359CA73F19245648EDC8461213C12CC0E10B0E9CE9752363F1B2205F2162B9DE61E6E0833B232295357F2B941C7AF42E11EAFE524E37D3C70093913E2CA417F2D905DF87330F2E231B9BEF3203BB901D4196B2E5592CA3502E8D88EC06CFBAD59A4669F4AB810CF855ECC36396693145424C416E864B17BFA2CBAB335132FBDFB9FD394FB1CF321914AA933F2A21F82FD7AEDFEF392163775F21E56D1B1C757B715327080BD210453D6648FE70ADA66725985C3C4BC0EB95745BF775B60ADC5C61EE22934021C8D0DD151365A87AA21A92E8DC45747AF1B5F62F706D550832327E03DBEF0B005DD67E3F591A295197062800110B34A01B255AA1D7250691C684A386160A59CA08A984BFAEC3C9F7BCA93ED8FCF6F46453AB483B3EFAC88C3CAAF3CD2A95E7D0615F1CEE5C0DBADB7A97530B704FECAB0FFA6243EE20FA8D61834216C3A42CBE815E38E06C4F2CC7803DB236A05ED14E9BF7D21104B493F78BCFF7C361EFFAA41C8A4E99419D4ED8FA98385C6721458919BA5FAC34&quot;,&#xd;
-    &quot;publicKeyFingerprint&quot; : &quot;3e70356e5a17b769009bc099c2dcae4b6b82f482a3f59711715d683f7e6fd167&quot;,&#xd;
-    &quot;encryptedKey&quot; : &quot;AAD08D20380DC188FF0C36E7725D3C2158F6152A113D07E17DDE79326FA464FE2ECFAC2952B93FC8FD3F5DA618E01C97D2A5A4A159A537384D9AF7754923F9B9E363C8400434753C65747AA916D964E0E3A815B92DCFC605A8F9A4B53FE585B9D5DF5B9F09B07C7ECA10D8A25CD8AF6832001C00EFA8C0AA6B79907FC732AFA677DA47D80E778C960AB1C2741D44EAF25A1B434E327ECA186C93C45AED33FB3D047ADFB9C493A4417DC8645B8CFA731B98C0930752B3B5AC1BD8EC5C5B94B46BAA2AAF13F4BDF4E6B02ABFFD9E4EF8DBA6BBE65BAFDCF13ED9064A3FE680DBFFFAB45365C5920C6341C9B68C5053F68195860258710FCC0F9EC441D92CBA65BA&quot;,&#xd;
-    &quot;iv&quot; : &quot;33CC701395B23592B48326F67984D618&quot;,&#xd;
-    &quot;oaepHashingAlgorithm&quot; : &quot;SHA256&quot;&#xd;
-},&#xd;
-&quot;correlationId&quot;:&quot;D${correlationID}&quot;,&#xd;
-&quot;tokenRequestorId&quot;:&quot;51111130273&quot;,&#xd;
-&quot;walletId&quot;:&quot;103&quot;,&#xd;
-&quot;paymentAppInstanceId&quot;:&quot;041C426B5D3E80016326027385940040919A38F237E4520C&quot;,&#xd;
-&quot;deviceInfo&quot;:{&#xd;
-&quot;isoDeviceType&quot;:&quot;21&quot;,&#xd;
-&quot;formFactor&quot;:&quot;PHONE&quot;,&#xd;
-&quot;storageTechnology&quot;:&quot;SE&quot;,&#xd;
-&quot;paymentTypes&quot;:[&#xd;
-&quot;NFC&quot;,&#xd;
-&quot;DSRP&quot;&#xd;
-],&#xd;
-&quot;deviceName&quot;:&quot;iPhone&quot;&#xd;
-},&#xd;
-&quot;walletProviderDecisioningInfo&quot;:{&#xd;
-&quot;recommendationStandardVersion&quot;:&quot;1.0&quot;,&#xd;
-&quot;deviceScore&quot;:&quot;1&quot;,&#xd;
-&quot;accountScore&quot;:&quot;1&quot;,&#xd;
-&quot;recommendedDecision&quot;:&quot;REQUIRE_ADDITIONAL_AUTHENTICATION&quot;,&#xd;
-&quot;recommendationReasons&quot;:[&#xd;
-&quot;ACCOUNT_TOO_NEW&quot;,&#xd;
-&quot;TOO_MANY_RECENT_ATTEMPTS&quot;,&#xd;
-&quot;OUTSIDE_HOME_TERRITORY&quot;&#xd;
-]&#xd;
-},&#xd;
-&quot;activeTokenCount&quot;:&quot;0&quot;,&#xd;
-&quot;tokenType&quot;:&quot;CLOUD&quot;&#xd;
-}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authenticated" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
             </elementProp>
             <stringProp name="HTTPSampler.domain">${serverUrl}</stringProp>
             <stringProp name="HTTPSampler.port">8080</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/mdes-server-1.2.5-SNAPSHOT/authorizeService</stringProp>
+            <stringProp name="HTTPSampler.path">/api/auth/v2/authenticated</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -179,11 +133,15 @@ props.put(&apos;tokenReferenceID&apos;, line.toString());</stringProp>
                   <stringProp name="Header.name">Accept</stringProp>
                   <stringProp name="Header.value">application/json</stringProp>
                 </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjUzMTM3OTM1LCJleHAiOjE2NTU3Mjk5MzV9.8VM7UtRsTUAmW9NJXsP9x1RVg4eM49MHw2csJXl1q45aWml48ApCDSZudY7pxQRSCd15kyaxl_Fptw-1dKm6xg</stringProp>
+                </elementProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
             <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Duration Assertion" enabled="true">
-              <stringProp name="DurationAssertion.duration">12000</stringProp>
+              <stringProp name="DurationAssertion.duration">1000</stringProp>
             </DurationAssertion>
             <hashTree/>
             <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
@@ -199,7 +157,7 @@ vars.put(&quot;requestID&quot;,&quot;${__UUID()}&quot;);
 </stringProp>
             </JSR223PreProcessor>
             <hashTree/>
-            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="false">
               <stringProp name="cacheKey">false</stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
@@ -240,7 +198,7 @@ if (response.decision == &quot;DECLINED&quot;) {
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Deliver Activation Code" enabled="true">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Deliver Activation Code" enabled="false">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
@@ -325,7 +283,7 @@ if (response.errorCode == &quot;INTERNAL_SERVICE_FAILURE&quot;){
               <hashTree/>
             </hashTree>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Notify Service Activated" enabled="true">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Notify Service Activated" enabled="false">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
@@ -460,7 +418,7 @@ if (response.errorCode == &quot;INTERNAL_SERVICE_FAILURE&quot;){
               <hashTree/>
             </hashTree>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Notify Token Updated" enabled="true">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Notify Token Updated" enabled="false">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
@@ -604,7 +562,7 @@ if (response.errorCode == &quot;INTERNAL_SERVICE_FAILURE&quot;){
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group VTS" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group VTS" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1032,7 +990,7 @@ vars.put(&quot;conversationId&quot;,&quot;${__UUID()}&quot;); </stringProp>
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group InApp" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group InApp" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
