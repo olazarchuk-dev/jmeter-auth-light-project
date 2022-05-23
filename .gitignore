@@ -1,0 +1,12 @@
+# IntelliJ IDEA
+.idea
+*.iml
+target
+
+# JVM crash logs
+hs_err_pid*
+
+*.log
+backups
+results
+*.jtl
