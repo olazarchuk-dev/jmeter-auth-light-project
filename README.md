@@ -2,22 +2,22 @@
 * Start = 1.0 (request/second)
 * End = 3.0 (request/second)
 * Load duration period = 10 (seconds)
-  ![Screenshot-01](screenshot_01.png)
+  ![Screenshot-01](img/screenshot_01.png)
 
 * Timeout response duration = 15 (milliseconds)
-  ![Screenshot-02](screenshot_02.png)
+  ![Screenshot-02](img/screenshot_02.png)
 
 * Status code successful = 200
-  ![Screenshot-03](screenshot_03.png)
+  ![Screenshot-03](img/screenshot_03.png)
 
 * Samples - Count requests on load duration period
 * Average - Average time on response duration
 * Throughput - Count requests on one-second
 * Error - Percent response failures
-  ![Screenshot-04](screenshot_04.png)
+  ![Screenshot-04](img/screenshot_04.png)
 
 * Response time draw on graphic
-  ![Screenshot-05](screenshot_05.png)
+  ![Screenshot-05](img/screenshot_05.png)
 
 ---
 
