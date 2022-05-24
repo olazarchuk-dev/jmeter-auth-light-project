@@ -4,12 +4,12 @@
 ```
 ![Screenshot-06](img/screenshot_06.png)
 
-* Start = 1.0 (request/second)
-* End = 3.0 (request/second)
-* Load duration period = 10 (seconds)
+* Start = 1.0 only first time (request/second)
+* End = 3.0 always time (request/second)
+* Duration = 10 load duration period (seconds)
   ![Screenshot-01](img/screenshot_01.png)
 
-* Timeout response duration = 15 (milliseconds)
+* Duration to assert = 15 Timeout response duration (milliseconds)
   ![Screenshot-02](img/screenshot_02.png)
 
 * Status code successful = 200

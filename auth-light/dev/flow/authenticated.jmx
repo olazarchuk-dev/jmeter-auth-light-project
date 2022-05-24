@@ -13,11 +13,6 @@
             <stringProp name="Argument.value">dev-api.smarttrader.com</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="logDir" elementType="Argument">
-            <stringProp name="Argument.name">logDir</stringProp>
-            <stringProp name="Argument.value">~/tools/wildfly-10.1.0/standalone/log/fasttack</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
         </collectionProp>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
@@ -98,7 +93,7 @@ vars.put(&quot;correlationID&quot;,String.valueOf(n));
                 <collectionProp name="Arguments.arguments"/>
               </elementProp>
               <stringProp name="HTTPSampler.domain">${serverUrl}</stringProp>
-              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
               <stringProp name="HTTPSampler.path">/gateway/auth-light/api/auth/v2/authenticated</stringProp>
@@ -124,7 +119,7 @@ vars.put(&quot;correlationID&quot;,String.valueOf(n));
                   </elementProp>
                   <elementProp name="" elementType="Header">
                     <stringProp name="Header.name">Authorization</stringProp>
-                    <stringProp name="Header.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjUzMTM3OTM1LCJleHAiOjE2NTU3Mjk5MzV9.8VM7UtRsTUAmW9NJXsP9x1RVg4eM49MHw2csJXl1q45aWml48ApCDSZudY7pxQRSCd15kyaxl_Fptw-1dKm6xg</stringProp>
+                    <stringProp name="Header.value">Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjUzMTM3OTM1LCJleHAiOjE2NTU3Mjk5MzV9.8VM7UtRsTUAmW9NJXsP9x1RVg4eM49MHw2csJXl1q45aWml48ApCDSZudY7pxQRSCd15kyaxl_Fptw-1dKm6xg</stringProp>
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
