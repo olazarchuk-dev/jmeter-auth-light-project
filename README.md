@@ -12,7 +12,7 @@
 * Duration to assert = 15 timeout response duration (milliseconds)
   ![Screenshot-02](img/screenshot_02.png)
 
-* Status code successful = 200
+* Successful status code = 200
   ![Screenshot-03](img/screenshot_03.png)
 
 * Samples - Count requests on load duration period
