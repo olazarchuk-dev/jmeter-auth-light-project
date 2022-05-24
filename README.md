@@ -145,7 +145,7 @@ How to Run External Commands and Programs from JMeter
 
 |   | windows  |
 |---|---|
-| serverUrl  | 192.168.1.113  |
+| serverUrl  | dev-api.smarttrader.com  |
 | start_time  | ${__time(YMDHMS)}  |
 | testPlanUrl  | ${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}  |
 | correlationIDFile  | ${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}\start_correlationID  |
@@ -156,29 +156,10 @@ How to Run External Commands and Programs from JMeter
 
 |   | linux  |
 |---|---|
-| serverUrl  | 192.168.1.113  |
+| serverUrl  | dev-api.smarttrader.com  |
 | start_time  | ${__time(YMDHMS)}  |
 | testPlanUrl  | ${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}  |
 | correlationIDFile  | ${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}/conf/start_correlationId.conf  |
 | tokenReferenceIDFile  | ${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}/conf/start_tokenReferenceId.conf  |
 | nmon_start_time  | ${__time(yyyy-MM-dd'T'HH:mm:ss,)}  |
 | resultDir  | ${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}/results/${__time(YMDHMS)}  |
-
-
-JMeter Maven Test Automation
----
-* `JMeter Maven Example` https://github.com/mlex/jmeter-maven-example
-* `How to Use the JMeter Maven Plugin` https://www.blazemeter.com/blog/how-use-jmeter-maven-plugin
-* http://www.testautomationguru.com/jmeter-continuous-performance-testing-jmeter-maven
-* https://www.atlassian.com/blog/archives/automated_performance_testing_using_jmeter_and_maven
-
-
-
-* `Building a Database Test Plan` https://jmeter.apache.org/usermanual/build-db-test-plan.html
-* `How to Retrieve Database Data for API Testing With JMeter` https://dzone.com/articles/how-to-retrieve-database-data-for-api-testing-with
-* `Debugging JDBC Sampler Results in JMeter` https://www.blazemeter.com/blog/debugging-jdbc-sampler-results-jmeter
-
-
-* https://www.ubik-ingenierie.com/blog/best-practice-using-jmeter-assertions
-* `Properties of Response Assertion in JMeter` https://jmetervn.com/2016/11/29/properties-of-response-assertion-in-jmeter
-* `JSR223 with Groovy: Variables (Part 1)` https://jmetervn.com/2016/12/05/jsr223-with-groovy-variables-part-1
