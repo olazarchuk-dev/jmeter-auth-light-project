@@ -1,4 +1,27 @@
 
+* Start = 1.0 (request/second)
+* End = 3.0 (request/second)
+* Load duration period = 10 (seconds)
+  ![Screenshot-01](screenshot_01.png)
+
+* Timeout response duration = 15 (milliseconds)
+  ![Screenshot-02](screenshot_02.png)
+
+* Status code successful = 200
+  ![Screenshot-03](screenshot_03.png)
+
+* Samples - Count requests on load duration period
+* Average - Average time on response duration
+* Throughput - Count requests on one-second
+* Error - Percent response failures
+  ![Screenshot-04](screenshot_04.png)
+
+* Response time draw on graphic
+  ![Screenshot-05](screenshot_05.png)
+
+---
+
+
 JMeter Tutorial 
 ---
 * `JMeter User's Manual` https://jmeter.apache.org/usermanual  **(** https://sqa.stackexchange.com/questions/2546/where-can-i-find-good-jmeter-tutorials **)**
@@ -159,8 +182,3 @@ JMeter Maven Test Automation
 * https://www.ubik-ingenierie.com/blog/best-practice-using-jmeter-assertions
 * `Properties of Response Assertion in JMeter` https://jmetervn.com/2016/11/29/properties-of-response-assertion-in-jmeter
 * `JSR223 with Groovy: Variables (Part 1)` https://jmetervn.com/2016/12/05/jsr223-with-groovy-variables-part-1
-
-
----
-
-[GitHub * Personal access tokens](https://mail.google.com/mail/u/0/#inbox/KtbxLwgswrfxtLZJbFzLlPHzglccGQBXXV)
