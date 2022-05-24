@@ -9,7 +9,7 @@
 * Duration = 10 load duration period (seconds)
   ![Screenshot-01](img/screenshot_01.png)
 
-* Duration to assert = 15 Timeout response duration (milliseconds)
+* Duration to assert = 15 timeout response duration (milliseconds)
   ![Screenshot-02](img/screenshot_02.png)
 
 * Status code successful = 200
