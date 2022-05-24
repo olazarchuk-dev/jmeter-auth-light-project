@@ -1,4 +1,9 @@
 
+```shell
+> apache-jmeter-5.0/bin/jmeter
+```
+![Screenshot-06](img/screenshot_06.png)
+
 * Start = 1.0 (request/second)
 * End = 3.0 (request/second)
 * Load duration period = 10 (seconds)

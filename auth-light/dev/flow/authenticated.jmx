@@ -10,7 +10,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="serverUrl" elementType="Argument">
             <stringProp name="Argument.name">serverUrl</stringProp>
-            <stringProp name="Argument.value">localhost</stringProp>
+            <stringProp name="Argument.value">dev-api.smarttrader.com</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="logDir" elementType="Argument">
@@ -23,7 +23,7 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MDES completed flow: AS - DAC - NSA" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="auth-light" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -87,7 +87,7 @@ vars.put(&quot;correlationID&quot;,String.valueOf(n));
             </JSR223Sampler>
             <hashTree/>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Authenticated Service" enabled="true">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If AuthController for Authenticated Service" enabled="true">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
@@ -98,10 +98,10 @@ vars.put(&quot;correlationID&quot;,String.valueOf(n));
                 <collectionProp name="Arguments.arguments"/>
               </elementProp>
               <stringProp name="HTTPSampler.domain">${serverUrl}</stringProp>
-              <stringProp name="HTTPSampler.port">8080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-              <stringProp name="HTTPSampler.path">/api/auth/v2/authenticated</stringProp>
+              <stringProp name="HTTPSampler.path">/gateway/auth-light/api/auth/v2/authenticated</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -124,13 +124,13 @@ vars.put(&quot;correlationID&quot;,String.valueOf(n));
                   </elementProp>
                   <elementProp name="" elementType="Header">
                     <stringProp name="Header.name">Authorization</stringProp>
-                    <stringProp name="Header.value">Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjUzMTM3OTM1LCJleHAiOjE2NTU3Mjk5MzV9.8VM7UtRsTUAmW9NJXsP9x1RVg4eM49MHw2csJXl1q45aWml48ApCDSZudY7pxQRSCd15kyaxl_Fptw-1dKm6xg</stringProp>
+                    <stringProp name="Header.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjUzMTM3OTM1LCJleHAiOjE2NTU3Mjk5MzV9.8VM7UtRsTUAmW9NJXsP9x1RVg4eM49MHw2csJXl1q45aWml48ApCDSZudY7pxQRSCd15kyaxl_Fptw-1dKm6xg</stringProp>
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
               <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Duration Assertion" enabled="true">
-                <stringProp name="DurationAssertion.duration">15</stringProp>
+                <stringProp name="DurationAssertion.duration">10000</stringProp>
               </DurationAssertion>
               <hashTree/>
               <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
@@ -229,8 +229,6 @@ vars.put(&quot;correlationID&quot;,String.valueOf(n));
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
-        <hashTree/>
-        <Summariser guiclass="SummariserGui" testclass="Summariser" testname="Generate Summary Results" enabled="true"/>
         <hashTree/>
         <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
