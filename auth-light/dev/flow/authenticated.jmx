@@ -10,7 +10,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="serverUrl" elementType="Argument">
             <stringProp name="Argument.name">serverUrl</stringProp>
-            <stringProp name="Argument.value">172.31.4.128</stringProp>
+            <stringProp name="Argument.value">dev-api.smarttrader.com</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -94,8 +94,8 @@ vars.put(&quot;correlationID&quot;,String.valueOf(n));
                 <collectionProp name="Arguments.arguments"/>
               </elementProp>
               <stringProp name="HTTPSampler.domain">${serverUrl}</stringProp>
-              <stringProp name="HTTPSampler.port">49162</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
               <stringProp name="HTTPSampler.path">/api/auth/v2/authenticated</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
