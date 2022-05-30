@@ -109,7 +109,7 @@ props.put(&apos;tokenReferenceID&apos;, line.toString());</stringProp>
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
             <stringProp name="HTTPSampler.domain">${serverUrl}</stringProp>
-            <stringProp name="HTTPSampler.port">8081</stringProp>
+            <stringProp name="HTTPSampler.port">8080</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
             <stringProp name="HTTPSampler.path">/api/auth/v2/authenticated</stringProp>

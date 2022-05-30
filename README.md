@@ -49,6 +49,16 @@ JMeter Tutorial
   * https://github.com/bennetelli/activemq-hawtio-standalone
 
 
+---
+
+Rest API Login
+---
+
+* `JMeter Introduction`: https://jmeter.apache.org/usermanual/component_reference.html
+* `Rest API Login Testing with JMeter` (Step by Step Guide) https://octoperf.com/blog/2018/04/23/jmeter-rest-api-testing/#rest-api-login
+* [Meter Distributed Testing Step-by-step](https://jmeter.apache.org/usermanual/jmeter_distributed_testing_step_by_step.pdf)
+
+
 BeanShell 
 ---
 * `Simple Java Scripting` http://www.beanshell.org/manual/bshmanual.html
