@@ -4,6 +4,11 @@
 ```
 ![Screenshot-06](img/screenshot_06.png)
 
+* Set config remote API-address for rest-test:
+![Screenshot-09](img/screenshot_09.png)
+![Screenshot-08](img/screenshot_08.png)
+![Screenshot-07](img/screenshot_07.png)
+
 * Start = 1.0 only first time (request/second)
 * End = 3.0 always time (request/second)
 * Duration = 10 load duration period (seconds)
