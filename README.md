@@ -37,7 +37,13 @@ Passing variable from response to header in JMETER
 * https://stackoverflow.com/questions/49318467/passing-variable-from-response-to-header-in-jmeter
   ![Screenshot-10](img/screenshot_10.png)
   ![Screenshot-11](img/screenshot_11.png)
-
+* [How to generate a cookie and send it in a request in Jmeter](https://stackoverflow.com/questions/40010164/how-to-generate-a-cookie-and-send-it-in-a-request-in-jmeter)
+  1. Add the next line to user.properties file (lives in JMeter's "bin" folder
+     ```text
+     CookieManager.save.cookies=true
+     ```
+  2. Restart JMeter to pick the property up.
+  3. Add HTTP Header Manager and set it up to send the desired header using ${COOKIE_foo} as a value (replace foo with your actual cookie name)
 
 ---
 
