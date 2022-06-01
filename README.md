@@ -31,6 +31,16 @@
 
 ---
 
+Passing variable from response to header in JMETER
+---
+
+* https://stackoverflow.com/questions/49318467/passing-variable-from-response-to-header-in-jmeter
+  ![Screenshot-10](img/screenshot_10.png)
+  ![Screenshot-11](img/screenshot_11.png)
+
+
+---
+
 
 JMeter Tutorial 
 ---

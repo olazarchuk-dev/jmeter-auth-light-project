@@ -187,11 +187,11 @@ if (response.accessToken == null ) {
 	AssertionResult.setFailureMessage(&quot;The response Auth-Token(s) not found&quot;);
 } else {
 	responseAccessToken = response.accessToken;
-	//props.put(&quot;accessToken&quot;,String.valueOf(responseAccessToken));
+	props.put(&quot;accessToken&quot;,String.valueOf(responseAccessToken));
 	vars.put(&quot;accessToken&quot;,String.valueOf(responseAccessToken));
 
 	responseRefreshToken = response.refreshToken;
-	//props.put(&quot;refreshToken&quot;,String.valueOf(responseRefreshToken));
+	props.put(&quot;refreshToken&quot;,String.valueOf(responseRefreshToken));
 	vars.put(&quot;refreshToken&quot;,String.valueOf(responseRefreshToken));
 }
 </stringProp>
