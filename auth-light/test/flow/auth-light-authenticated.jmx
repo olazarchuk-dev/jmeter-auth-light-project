@@ -148,6 +148,35 @@ vars.put(&quot;refreshToken&quot;,String.valueOf(n)); </stringProp>
 </stringProp>
               </JSR223PreProcessor>
               <hashTree/>
+              <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+                <boolProp name="clearEachIteration">false</boolProp>
+                <boolProp name="useExpires">true</boolProp>
+              </CacheManager>
+              <hashTree/>
+              <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+                <collectionProp name="CookieManager.cookies">
+                  <elementProp name="AccessToken" elementType="Cookie" testname="AccessToken">
+                    <stringProp name="Cookie.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjU0MDk5NTUxLCJleHAiOjE2NTQxNTk1NTF9.JUnm22ClHwwZdJEfHE72x3lHT6m-tDh9ef6X971lKyawyx-78Ng5FHcBLeYCYN8ImWykgTSdH7bI7ExFTm3VAQ</stringProp>
+                    <stringProp name="Cookie.domain">localhost</stringProp>
+                    <stringProp name="Cookie.path">/</stringProp>
+                    <boolProp name="Cookie.secure">true</boolProp>
+                    <longProp name="Cookie.expires">0</longProp>
+                    <boolProp name="Cookie.path_specified">true</boolProp>
+                    <boolProp name="Cookie.domain_specified">true</boolProp>
+                  </elementProp>
+                  <elementProp name="RefreshToken" elementType="Cookie" testname="RefreshToken">
+                    <stringProp name="Cookie.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjU0MDk5NTUxLCJleHAiOjE2NTQyNzk1NTF9.W6LAZu0h2UQYmH1s1JtokaIGo2r--ol_6WN_viA6Ee9fgUeNzcvLMF_Uuyn6r8kx2w7KgFC6V0_KRXQLBfxAYQ</stringProp>
+                    <stringProp name="Cookie.domain">localhost</stringProp>
+                    <stringProp name="Cookie.path">/</stringProp>
+                    <boolProp name="Cookie.secure">true</boolProp>
+                    <longProp name="Cookie.expires">0</longProp>
+                    <boolProp name="Cookie.path_specified">true</boolProp>
+                    <boolProp name="Cookie.domain_specified">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+                <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+              </CookieManager>
+              <hashTree/>
               <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="" elementType="Header">
@@ -246,6 +275,35 @@ if (response.accessToken == null ) {
 
 </stringProp>
               </JSR223PreProcessor>
+              <hashTree/>
+              <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+                <boolProp name="clearEachIteration">false</boolProp>
+                <boolProp name="useExpires">true</boolProp>
+              </CacheManager>
+              <hashTree/>
+              <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+                <collectionProp name="CookieManager.cookies">
+                  <elementProp name="AccessToken" elementType="Cookie" testname="AccessToken">
+                    <stringProp name="Cookie.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjU0MDk5NTUxLCJleHAiOjE2NTQxNTk1NTF9.JUnm22ClHwwZdJEfHE72x3lHT6m-tDh9ef6X971lKyawyx-78Ng5FHcBLeYCYN8ImWykgTSdH7bI7ExFTm3VAQ</stringProp>
+                    <stringProp name="Cookie.domain">localhost</stringProp>
+                    <stringProp name="Cookie.path">/</stringProp>
+                    <boolProp name="Cookie.secure">true</boolProp>
+                    <longProp name="Cookie.expires">0</longProp>
+                    <boolProp name="Cookie.path_specified">true</boolProp>
+                    <boolProp name="Cookie.domain_specified">true</boolProp>
+                  </elementProp>
+                  <elementProp name="RefreshToken" elementType="Cookie" testname="RefreshToken">
+                    <stringProp name="Cookie.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjU0MDk5NTUxLCJleHAiOjE2NTQyNzk1NTF9.W6LAZu0h2UQYmH1s1JtokaIGo2r--ol_6WN_viA6Ee9fgUeNzcvLMF_Uuyn6r8kx2w7KgFC6V0_KRXQLBfxAYQ</stringProp>
+                    <stringProp name="Cookie.domain">localhost</stringProp>
+                    <stringProp name="Cookie.path">/</stringProp>
+                    <boolProp name="Cookie.secure">true</boolProp>
+                    <longProp name="Cookie.expires">0</longProp>
+                    <boolProp name="Cookie.path_specified">true</boolProp>
+                    <boolProp name="Cookie.domain_specified">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+                <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+              </CookieManager>
               <hashTree/>
               <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
                 <collectionProp name="HeaderManager.headers">
