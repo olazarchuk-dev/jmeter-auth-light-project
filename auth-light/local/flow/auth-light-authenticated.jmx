@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.0 r1840935">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan: Login, Authenticated, Refresh" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
@@ -13,17 +13,12 @@
             <stringProp name="Argument.value">localhost</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="remoteServerUrl" elementType="Argument">
-            <stringProp name="Argument.name">remoteServerUrl</stringProp>
-            <stringProp name="Argument.value">dev-api.smarttrader.com</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
         </collectionProp>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="AUTH-LIGHT Service flow: Login - Authenticated" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Auth-Light &amp; Auth-Light-Authenticated Service(s) flow" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -81,7 +76,7 @@
             </collectionProp>
           </Arguments>
           <hashTree/>
-          <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="Critical Section Controller" enabled="true">
+          <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="Critical Section Controller" enabled="false">
             <stringProp name="CriticalSectionController.lockName">global_lock</stringProp>
           </CriticalSectionController>
           <hashTree>
@@ -102,13 +97,13 @@ vars.put(&quot;refreshToken&quot;,String.valueOf(n)); </stringProp>
             </JSR223Sampler>
             <hashTree/>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Auth Service  ( https://dev.smarttrader.com )" enabled="true">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Auth-Light Service" enabled="true">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login  ( https://dev.smarttrader.com )" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login ( Auth-Light )" enabled="true">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments">
@@ -122,9 +117,9 @@ vars.put(&quot;refreshToken&quot;,String.valueOf(n)); </stringProp>
                   </elementProp>
                 </collectionProp>
               </elementProp>
-              <stringProp name="HTTPSampler.domain">dev.smarttrader.com</stringProp>
-              <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.domain">${serverUrl}</stringProp>
+              <stringProp name="HTTPSampler.port">8081</stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
               <stringProp name="HTTPSampler.path">/api/auth/v2/token/</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -147,6 +142,35 @@ vars.put(&quot;refreshToken&quot;,String.valueOf(n)); </stringProp>
 
 </stringProp>
               </JSR223PreProcessor>
+              <hashTree/>
+              <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+                <boolProp name="clearEachIteration">false</boolProp>
+                <boolProp name="useExpires">true</boolProp>
+              </CacheManager>
+              <hashTree/>
+              <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+                <collectionProp name="CookieManager.cookies">
+                  <elementProp name="AccessToken" elementType="Cookie" testname="AccessToken">
+                    <stringProp name="Cookie.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjU0MDk5NTUxLCJleHAiOjE2NTQxNTk1NTF9.JUnm22ClHwwZdJEfHE72x3lHT6m-tDh9ef6X971lKyawyx-78Ng5FHcBLeYCYN8ImWykgTSdH7bI7ExFTm3VAQ</stringProp>
+                    <stringProp name="Cookie.domain">localhost</stringProp>
+                    <stringProp name="Cookie.path">/</stringProp>
+                    <boolProp name="Cookie.secure">false</boolProp>
+                    <longProp name="Cookie.expires">0</longProp>
+                    <boolProp name="Cookie.path_specified">true</boolProp>
+                    <boolProp name="Cookie.domain_specified">true</boolProp>
+                  </elementProp>
+                  <elementProp name="RefreshToken" elementType="Cookie" testname="RefreshToken">
+                    <stringProp name="Cookie.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjU0MDk5NTUxLCJleHAiOjE2NTQyNzk1NTF9.W6LAZu0h2UQYmH1s1JtokaIGo2r--ol_6WN_viA6Ee9fgUeNzcvLMF_Uuyn6r8kx2w7KgFC6V0_KRXQLBfxAYQ</stringProp>
+                    <stringProp name="Cookie.domain">localhost</stringProp>
+                    <stringProp name="Cookie.path">/</stringProp>
+                    <boolProp name="Cookie.secure">false</boolProp>
+                    <longProp name="Cookie.expires">0</longProp>
+                    <boolProp name="Cookie.path_specified">true</boolProp>
+                    <boolProp name="Cookie.domain_specified">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+                <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+              </CookieManager>
               <hashTree/>
               <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
                 <collectionProp name="HeaderManager.headers">
@@ -211,87 +235,18 @@ if (response.accessToken == null ) {
               <hashTree/>
             </hashTree>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Authenticated Service ( 172.31.4.128:49163 )" enabled="false">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Auth-Light-Authenticated Service" enabled="true">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authenticated  ( 172.31.4.128:49163 )" enabled="true">
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-                <collectionProp name="Arguments.arguments"/>
-              </elementProp>
-              <stringProp name="HTTPSampler.domain">172.31.4.128</stringProp>
-              <stringProp name="HTTPSampler.port">49163</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-              <stringProp name="HTTPSampler.path">/api/auth/v2/authenticated/</stringProp>
-              <stringProp name="HTTPSampler.method">POST</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
-              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-              <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
-                <stringProp name="scriptLanguage">groovy</stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="cacheKey">true</stringProp>
-                <stringProp name="script">vars.put(&quot;requestID&quot;,&quot;${__UUID()}&quot;); 
-
-</stringProp>
-              </JSR223PreProcessor>
-              <hashTree/>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/json</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">application/json</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Authorization</stringProp>
-                    <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Duration Assertion" enabled="true">
-                <stringProp name="DurationAssertion.duration">1500</stringProp>
-              </DurationAssertion>
-              <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="49586">200</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.custom_message"></stringProp>
-                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">8</intProp>
-              </ResponseAssertion>
-              <hashTree/>
-            </hashTree>
-          </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Authenticated Service" enabled="true">
-            <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
-            <boolProp name="IfController.evaluateAll">false</boolProp>
-            <boolProp name="IfController.useExpression">true</boolProp>
-          </IfController>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authenticated" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Authenticated ( Auth-Light-Authenticated )" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                 <collectionProp name="Arguments.arguments"/>
               </elementProp>
               <stringProp name="HTTPSampler.domain">${serverUrl}</stringProp>
-              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.port">8082</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
               <stringProp name="HTTPSampler.path">/api/auth/v2/authenticated/</stringProp>
@@ -316,6 +271,35 @@ if (response.accessToken == null ) {
 </stringProp>
               </JSR223PreProcessor>
               <hashTree/>
+              <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+                <boolProp name="clearEachIteration">false</boolProp>
+                <boolProp name="useExpires">true</boolProp>
+              </CacheManager>
+              <hashTree/>
+              <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+                <collectionProp name="CookieManager.cookies">
+                  <elementProp name="AccessToken" elementType="Cookie" testname="AccessToken">
+                    <stringProp name="Cookie.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjU0MDk5NTUxLCJleHAiOjE2NTQxNTk1NTF9.JUnm22ClHwwZdJEfHE72x3lHT6m-tDh9ef6X971lKyawyx-78Ng5FHcBLeYCYN8ImWykgTSdH7bI7ExFTm3VAQ</stringProp>
+                    <stringProp name="Cookie.domain">localhost</stringProp>
+                    <stringProp name="Cookie.path">/</stringProp>
+                    <boolProp name="Cookie.secure">false</boolProp>
+                    <longProp name="Cookie.expires">0</longProp>
+                    <boolProp name="Cookie.path_specified">true</boolProp>
+                    <boolProp name="Cookie.domain_specified">true</boolProp>
+                  </elementProp>
+                  <elementProp name="RefreshToken" elementType="Cookie" testname="RefreshToken">
+                    <stringProp name="Cookie.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjU0MDk5NTUxLCJleHAiOjE2NTQyNzk1NTF9.W6LAZu0h2UQYmH1s1JtokaIGo2r--ol_6WN_viA6Ee9fgUeNzcvLMF_Uuyn6r8kx2w7KgFC6V0_KRXQLBfxAYQ</stringProp>
+                    <stringProp name="Cookie.domain">localhost</stringProp>
+                    <stringProp name="Cookie.path">/</stringProp>
+                    <boolProp name="Cookie.secure">false</boolProp>
+                    <longProp name="Cookie.expires">0</longProp>
+                    <boolProp name="Cookie.path_specified">true</boolProp>
+                    <boolProp name="Cookie.domain_specified">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+                <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+              </CookieManager>
+              <hashTree/>
               <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="" elementType="Header">
@@ -334,7 +318,7 @@ if (response.accessToken == null ) {
               </HeaderManager>
               <hashTree/>
               <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Duration Assertion" enabled="true">
-                <stringProp name="DurationAssertion.duration">1500</stringProp>
+                <stringProp name="DurationAssertion.duration">15000</stringProp>
               </DurationAssertion>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -348,7 +332,7 @@ if (response.accessToken == null ) {
               </ResponseAssertion>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="refresh" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Refresh ( Auth-Light-Authenticated )" enabled="true">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments">
@@ -360,10 +344,10 @@ if (response.accessToken == null ) {
                 </collectionProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain">${serverUrl}</stringProp>
-              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.port">8082</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-              <stringProp name="HTTPSampler.path">/api/auth/token/refresh</stringProp>
+              <stringProp name="HTTPSampler.path">/api/auth/token/refresh/</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -385,6 +369,35 @@ if (response.accessToken == null ) {
 </stringProp>
               </JSR223PreProcessor>
               <hashTree/>
+              <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+                <boolProp name="clearEachIteration">false</boolProp>
+                <boolProp name="useExpires">true</boolProp>
+              </CacheManager>
+              <hashTree/>
+              <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+                <collectionProp name="CookieManager.cookies">
+                  <elementProp name="AccessToken" elementType="Cookie" testname="AccessToken">
+                    <stringProp name="Cookie.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjU0MDk5NTUxLCJleHAiOjE2NTQxNTk1NTF9.JUnm22ClHwwZdJEfHE72x3lHT6m-tDh9ef6X971lKyawyx-78Ng5FHcBLeYCYN8ImWykgTSdH7bI7ExFTm3VAQ</stringProp>
+                    <stringProp name="Cookie.domain">localhost</stringProp>
+                    <stringProp name="Cookie.path">/</stringProp>
+                    <boolProp name="Cookie.secure">false</boolProp>
+                    <longProp name="Cookie.expires">0</longProp>
+                    <boolProp name="Cookie.path_specified">true</boolProp>
+                    <boolProp name="Cookie.domain_specified">true</boolProp>
+                  </elementProp>
+                  <elementProp name="RefreshToken" elementType="Cookie" testname="RefreshToken">
+                    <stringProp name="Cookie.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjU0MDk5NTUxLCJleHAiOjE2NTQyNzk1NTF9.W6LAZu0h2UQYmH1s1JtokaIGo2r--ol_6WN_viA6Ee9fgUeNzcvLMF_Uuyn6r8kx2w7KgFC6V0_KRXQLBfxAYQ</stringProp>
+                    <stringProp name="Cookie.domain">localhost</stringProp>
+                    <stringProp name="Cookie.path">/</stringProp>
+                    <boolProp name="Cookie.secure">false</boolProp>
+                    <longProp name="Cookie.expires">0</longProp>
+                    <boolProp name="Cookie.path_specified">true</boolProp>
+                    <boolProp name="Cookie.domain_specified">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+                <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+              </CookieManager>
+              <hashTree/>
               <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="" elementType="Header">
@@ -403,7 +416,7 @@ if (response.accessToken == null ) {
               </HeaderManager>
               <hashTree/>
               <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Duration Assertion" enabled="true">
-                <stringProp name="DurationAssertion.duration">1500</stringProp>
+                <stringProp name="DurationAssertion.duration">15000</stringProp>
               </DurationAssertion>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
