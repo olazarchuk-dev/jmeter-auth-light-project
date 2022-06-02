@@ -45,6 +45,9 @@ Passing variable from response to header in JMETER
      ```
   2. Restart JMeter to pick the property up.
   3. Add HTTP Header Manager and set it up to send the desired header using ${COOKIE_foo} as a value (replace foo with your actual cookie name)
+* https://www.capacitas.co.uk/insights/thats-the-way-the-cookie-crumbles-jmeter-style-part-2
+  ![Screenshot-12](img/screenshot_12.png)
+
 
 ---
 
