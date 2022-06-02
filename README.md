@@ -37,6 +37,7 @@ Passing variable from response to header in JMETER
 * https://stackoverflow.com/questions/49318467/passing-variable-from-response-to-header-in-jmeter
   ![Screenshot-10](img/screenshot_10.png)
   ![Screenshot-11](img/screenshot_11.png)
+* [How to handle cookie in Apache JMeter](https://www.perfmatrix.com/jmeter-http-cookie-manager)
 * [How to generate a cookie and send it in a request in Jmeter](https://stackoverflow.com/questions/40010164/how-to-generate-a-cookie-and-send-it-in-a-request-in-jmeter)
   1. Add the next line to user.properties file (lives in JMeter's "bin" folder
      ```text
