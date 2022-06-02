@@ -8,14 +8,9 @@
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="serverUrl_1" elementType="Argument">
-            <stringProp name="Argument.name">serverUrl_1</stringProp>
+          <elementProp name="serverUrl" elementType="Argument">
+            <stringProp name="Argument.name">serverUrl</stringProp>
             <stringProp name="Argument.value">dev.smarttrader.com</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="serverUrl_2" elementType="Argument">
-            <stringProp name="Argument.name">serverUrl_2</stringProp>
-            <stringProp name="Argument.value">localhost</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -85,7 +80,7 @@
             <stringProp name="CriticalSectionController.lockName">global_lock</stringProp>
           </CriticalSectionController>
           <hashTree>
-            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="false">
               <stringProp name="cacheKey">true</stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
@@ -108,7 +103,7 @@ vars.put(&quot;refreshToken&quot;,String.valueOf(n)); </stringProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login  ( https://dev.smarttrader.com )" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login ( Auth-Light )" enabled="true">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments">
@@ -122,7 +117,7 @@ vars.put(&quot;refreshToken&quot;,String.valueOf(n)); </stringProp>
                   </elementProp>
                 </collectionProp>
               </elementProp>
-              <stringProp name="HTTPSampler.domain">${serverUrl_1}</stringProp>
+              <stringProp name="HTTPSampler.domain">${serverUrl}</stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
@@ -159,7 +154,7 @@ vars.put(&quot;refreshToken&quot;,String.valueOf(n)); </stringProp>
                     <stringProp name="Cookie.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjU0MDk5NTUxLCJleHAiOjE2NTQxNTk1NTF9.JUnm22ClHwwZdJEfHE72x3lHT6m-tDh9ef6X971lKyawyx-78Ng5FHcBLeYCYN8ImWykgTSdH7bI7ExFTm3VAQ</stringProp>
                     <stringProp name="Cookie.domain">localhost</stringProp>
                     <stringProp name="Cookie.path">/</stringProp>
-                    <boolProp name="Cookie.secure">true</boolProp>
+                    <boolProp name="Cookie.secure">false</boolProp>
                     <longProp name="Cookie.expires">0</longProp>
                     <boolProp name="Cookie.path_specified">true</boolProp>
                     <boolProp name="Cookie.domain_specified">true</boolProp>
@@ -168,7 +163,7 @@ vars.put(&quot;refreshToken&quot;,String.valueOf(n)); </stringProp>
                     <stringProp name="Cookie.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMTIyNSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjU0MDk5NTUxLCJleHAiOjE2NTQyNzk1NTF9.W6LAZu0h2UQYmH1s1JtokaIGo2r--ol_6WN_viA6Ee9fgUeNzcvLMF_Uuyn6r8kx2w7KgFC6V0_KRXQLBfxAYQ</stringProp>
                     <stringProp name="Cookie.domain">localhost</stringProp>
                     <stringProp name="Cookie.path">/</stringProp>
-                    <boolProp name="Cookie.secure">true</boolProp>
+                    <boolProp name="Cookie.secure">false</boolProp>
                     <longProp name="Cookie.expires">0</longProp>
                     <boolProp name="Cookie.path_specified">true</boolProp>
                     <boolProp name="Cookie.domain_specified">true</boolProp>
@@ -246,13 +241,13 @@ if (response.accessToken == null ) {
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Authenticated ( 172.31.4.128:49163 )" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Authenticated ( Auth-Light-Authenticated )" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                 <collectionProp name="Arguments.arguments"/>
               </elementProp>
-              <stringProp name="HTTPSampler.domain">${serverUrl_2}</stringProp>
-              <stringProp name="HTTPSampler.port">8080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.domain">${serverUrl}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
               <stringProp name="HTTPSampler.path">/api/auth/v2/authenticated/</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -337,7 +332,7 @@ if (response.accessToken == null ) {
               </ResponseAssertion>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Refresh ( 172.31.4.128:49163 )" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Refresh ( Auth-Light-Authenticated )" enabled="true">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments">
@@ -348,11 +343,11 @@ if (response.accessToken == null ) {
                   </elementProp>
                 </collectionProp>
               </elementProp>
-              <stringProp name="HTTPSampler.domain">${serverUrl_2}</stringProp>
-              <stringProp name="HTTPSampler.port">8080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.domain">${serverUrl}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-              <stringProp name="HTTPSampler.path">/api/auth/token/refresh</stringProp>
+              <stringProp name="HTTPSampler.path">/api/auth/token/refresh/</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
