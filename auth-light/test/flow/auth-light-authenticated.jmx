@@ -312,6 +312,18 @@ if (response.accessToken == null ) {
                 <intProp name="Assertion.test_type">8</intProp>
               </ResponseAssertion>
               <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor AccessToken" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">accessToken</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.accessToken</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor RefreshToken" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">refreshToken</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.refreshToken</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
             </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Auth-Light Service" enabled="true">
@@ -405,40 +417,6 @@ if (response.accessToken == null ) {
                 <boolProp name="Assertion.assume_success">false</boolProp>
                 <intProp name="Assertion.test_type">8</intProp>
               </ResponseAssertion>
-              <hashTree/>
-              <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="false">
-                <stringProp name="scriptLanguage">groovy</stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="cacheKey">true</stringProp>
-                <stringProp name="script">def response =  new groovy.json.JsonSlurper().parse(prev.getResponseData())
-
-if (response.accessToken == null ) {
-	AssertionResult.setFailure(true)
-	AssertionResult.setFailureMessage(&quot;The response Auth-Token(s) not found&quot;);
-} else {
-	responseAccessToken = response.accessToken;
-	props.put(&quot;accessToken&quot;,String.valueOf(responseAccessToken));
-	vars.put(&quot;accessToken&quot;,String.valueOf(responseAccessToken));
-
-	responseRefreshToken = response.refreshToken;
-	props.put(&quot;refreshToken&quot;,String.valueOf(responseRefreshToken));
-	vars.put(&quot;refreshToken&quot;,String.valueOf(responseRefreshToken));
-}
-</stringProp>
-              </JSR223Assertion>
-              <hashTree/>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor AccessToken" enabled="true">
-                <stringProp name="JSONPostProcessor.referenceNames">accessToken</stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs">$.accessToken</stringProp>
-                <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
-              </JSONPostProcessor>
-              <hashTree/>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor RefreshToken" enabled="true">
-                <stringProp name="JSONPostProcessor.referenceNames">refreshToken</stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs">$.refreshToken</stringProp>
-                <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
-              </JSONPostProcessor>
               <hashTree/>
             </hashTree>
           </hashTree>
