@@ -51,6 +51,17 @@ Passing variable from response to header in JMETER
 
 ---
 
+Jmeter - Increment value before each sampler request
+---
++ https://jmetervn.com/2016/12/05/jsr223-with-groovy-variables-part-1
++ https://stackoverflow.com/questions/52000899/jmeter-increment-value-before-each-sampler-request
+  - In Test Plan, define variable "counter" set to 0
+  - Then add a User Parameters which is a PreProcessor (so executed BEFORE SAMPLER) component using __intSum function
+  - For auto increment, initialize a variable let say "id" with 0 in the user defined variable then use ${__intSum(${id},1,id)} for auto increment
+    ![Screenshot-13](img/screenshot_13.png)
+    ![Screenshot-14](img/screenshot_14.png)
+    ![Screenshot-15](img/screenshot_15.png)
+
 
 JMeter Tutorial 
 ---
