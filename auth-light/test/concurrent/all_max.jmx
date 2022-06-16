@@ -45,7 +45,7 @@
           </elementProp>
           <elementProp name="countLoginID" elementType="Argument">
             <stringProp name="Argument.name">countLoginID</stringProp>
-            <stringProp name="Argument.value">1000000</stringProp>
+            <stringProp name="Argument.value">200000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="userLoginIDFile" elementType="Argument">
@@ -242,14 +242,14 @@ if (response.accessToken == null ) {
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login   username${__P(userLoginID)}@markettraders.com" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login   test${__P(userLoginID)}@mail.com" enabled="false">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-    &quot;email&quot;: &quot;username${__P(userLoginID)}@markettraders.com&quot;,&#xd;
+    &quot;email&quot;: &quot;test${__P(userLoginID)}@mail.com&quot;,&#xd;
     &quot;password&quot;: &quot;1QAZxcft654321&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -358,14 +358,14 @@ if (response.accessToken == null ) {
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login   username${countLoginID}@markettraders.com" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login   test${countLoginID}@mail.com" enabled="false">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-    &quot;email&quot;: &quot;username${countLoginID}@markettraders.com&quot;,&#xd;
+    &quot;email&quot;: &quot;test${countLoginID}@mail.com&quot;,&#xd;
     &quot;password&quot;: &quot;1QAZxcft654321&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -487,7 +487,7 @@ if (response.accessToken == null ) {
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Authenticated   username${countLoginID}@markettraders.com" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Authenticated   test${countLoginID}@mail.com" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -595,7 +595,7 @@ if (response.accessToken == null ) {
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Logout   username${countLoginID}@markettraders.com" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Logout   test${countLoginID}@mail.com" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
