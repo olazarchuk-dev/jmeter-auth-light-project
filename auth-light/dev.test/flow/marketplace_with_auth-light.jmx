@@ -378,7 +378,7 @@ if (response.accessToken == null ) {
                     <stringProp name="Header.value">application/json</stringProp>
                   </elementProp>
                   <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">authorization</stringProp>
+                    <stringProp name="Header.name">Authorization</stringProp>
                     <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
                   </elementProp>
                 </collectionProp>
@@ -453,7 +453,7 @@ if (response.accessToken == null ) {
                     <stringProp name="Header.value">application/json</stringProp>
                   </elementProp>
                   <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">authorization</stringProp>
+                    <stringProp name="Header.name">Authorization</stringProp>
                     <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
                   </elementProp>
                 </collectionProp>
@@ -522,7 +522,7 @@ if (response.accessToken == null ) {
                     <stringProp name="Header.value">application/json</stringProp>
                   </elementProp>
                   <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">authorization</stringProp>
+                    <stringProp name="Header.name">Authorization</stringProp>
                     <stringProp name="Header.value">Bearer ${accessToken}</stringProp>
                   </elementProp>
                 </collectionProp>
