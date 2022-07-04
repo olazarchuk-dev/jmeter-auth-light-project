@@ -55,7 +55,7 @@
           </elementProp>
           <elementProp name="concurrentByOneRandomExtensionPath" elementType="Argument">
             <stringProp name="Argument.name">concurrentByOneRandomExtensionPath</stringProp>
-            <stringProp name="Argument.value">auth-light/dev.test/concurrent_by_one_random_extension/conf</stringProp>
+            <stringProp name="Argument.value">auth-light/dev.test/concurrent_by_one_random_ext/conf</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
