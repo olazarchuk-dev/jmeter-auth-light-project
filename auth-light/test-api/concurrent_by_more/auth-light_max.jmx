@@ -381,7 +381,7 @@ if (response.accessToken == null ) {
               <collectionProp name="CookieManager.cookies">
                 <elementProp name="AccessToken" elementType="Cookie" testname="AccessToken">
                   <stringProp name="Cookie.value">${accessToken}</stringProp>
-                  <stringProp name="Cookie.domain">dev.smarttrader.com</stringProp>
+                  <stringProp name="Cookie.domain">test.smarttrader.com</stringProp>
                   <stringProp name="Cookie.path">/</stringProp>
                   <boolProp name="Cookie.secure">false</boolProp>
                   <longProp name="Cookie.expires">0</longProp>
@@ -390,7 +390,7 @@ if (response.accessToken == null ) {
                 </elementProp>
                 <elementProp name="RefreshToken" elementType="Cookie" testname="RefreshToken">
                   <stringProp name="Cookie.value">${refreshToken}</stringProp>
-                  <stringProp name="Cookie.domain">dev.smarttrader.com</stringProp>
+                  <stringProp name="Cookie.domain">test.smarttrader.com</stringProp>
                   <stringProp name="Cookie.path">/</stringProp>
                   <boolProp name="Cookie.secure">false</boolProp>
                   <longProp name="Cookie.expires">0</longProp>
@@ -479,7 +479,7 @@ if (response.accessToken == null ) {
               <collectionProp name="CookieManager.cookies">
                 <elementProp name="AccessToken" elementType="Cookie" testname="AccessToken">
                   <stringProp name="Cookie.value">${accessToken}</stringProp>
-                  <stringProp name="Cookie.domain">dev.smarttrader.com</stringProp>
+                  <stringProp name="Cookie.domain">test.smarttrader.com</stringProp>
                   <stringProp name="Cookie.path">/</stringProp>
                   <boolProp name="Cookie.secure">false</boolProp>
                   <longProp name="Cookie.expires">0</longProp>
@@ -488,7 +488,7 @@ if (response.accessToken == null ) {
                 </elementProp>
                 <elementProp name="RefreshToken" elementType="Cookie" testname="RefreshToken">
                   <stringProp name="Cookie.value">${refreshToken}</stringProp>
-                  <stringProp name="Cookie.domain">dev.smarttrader.com</stringProp>
+                  <stringProp name="Cookie.domain">test.smarttrader.com</stringProp>
                   <stringProp name="Cookie.path">/</stringProp>
                   <boolProp name="Cookie.secure">false</boolProp>
                   <longProp name="Cookie.expires">0</longProp>
