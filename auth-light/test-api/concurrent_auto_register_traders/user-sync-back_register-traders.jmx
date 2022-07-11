@@ -118,12 +118,12 @@ props.put(&apos;traderRegisterID&apos;, line.toString())</stringProp>
         <boolProp name="ThreadGroup.delayedStart">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer" enabled="true">
+        <kg.apc.jmeter.timers.VariableThroughputTimer guiclass="kg.apc.jmeter.timers.VariableThroughputTimerGui" testclass="kg.apc.jmeter.timers.VariableThroughputTimer" testname="jp@gc - Throughput Shaping Timer    (200=40 | 1000=200)" enabled="true">
           <collectionProp name="load_profile">
-            <collectionProp name="1976231561">
+            <collectionProp name="577389122">
               <stringProp name="48563">1.0</stringProp>
               <stringProp name="1507361">10.0</stringProp>
-              <stringProp name="49586">200</stringProp>
+              <stringProp name="1507423">1000</stringProp>
             </collectionProp>
           </collectionProp>
         </kg.apc.jmeter.timers.VariableThroughputTimer>
