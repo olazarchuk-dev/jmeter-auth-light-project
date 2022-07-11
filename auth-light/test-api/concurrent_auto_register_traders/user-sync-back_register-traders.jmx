@@ -128,7 +128,7 @@ props.put(&apos;traderRegisterID&apos;, line.toString())</stringProp>
           </collectionProp>
         </kg.apc.jmeter.timers.VariableThroughputTimer>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
@@ -329,7 +329,7 @@ if (response.accessToken == null ) {
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" enabled="false">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
