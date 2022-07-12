@@ -20,7 +20,7 @@
           </elementProp>
           <elementProp name="bearerToken" elementType="Argument">
             <stringProp name="Argument.name">bearerToken</stringProp>
-            <stringProp name="Argument.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwIiwicm9sZSI6IlNFUlZJQ0UiLCJpYXQiOjE1ODgyNjEyODUsImV4cCI6MTAyMjgyNjEyODV9.rqUSYJKOqB0yGrNtkN0I1VIlTlOhUnLZNZv42BOKSd88oojIVipMXjs4-gdC1qoz3RZ6BUi4iLkosARzbbULNw</stringProp>
+            <stringProp name="Argument.value">eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAxMDQ0MSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwiaWF0IjoxNjUwMDEzNjkwLCJleHAiOjE3NTAwNzM2OTB9.C4ir-cTdUtdDR0H--qrPVsxcH1m2AP3sQXGazc_yljyVRnuXFgsl5lZwdGEsaSDIYblDDY3TY8KUTnHw_VcwbQ</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -121,7 +121,7 @@ vars.put(&quot;refreshToken&quot;,String.valueOf(n)); </stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-              <stringProp name="HTTPSampler.path">/gateway/user/api/private/users/tradertest1961@mail.com</stringProp>
+              <stringProp name="HTTPSampler.path">/gateway/user/api/private/users/tradertest4@mail.com</stringProp>
               <stringProp name="HTTPSampler.method">GET</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -196,47 +196,39 @@ if (response.accessToken == null ) {
 </stringProp>
               </JSR223Assertion>
               <hashTree/>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor new ID" enabled="true">
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor User-ID" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">id</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.id</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
               </JSONPostProcessor>
               <hashTree/>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor LastName" enabled="true">
-                <stringProp name="JSONPostProcessor.referenceNames">lastName</stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs">$.lastName</stringProp>
-                <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
-              </JSONPostProcessor>
-              <hashTree/>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor FirstName" enabled="true">
-                <stringProp name="JSONPostProcessor.referenceNames">firstName</stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs">$.firstName</stringProp>
-                <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
-              </JSONPostProcessor>
-              <hashTree/>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor Email" enabled="true">
-                <stringProp name="JSONPostProcessor.referenceNames">email</stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs">$.email</stringProp>
-                <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
-              </JSONPostProcessor>
-              <hashTree/>
             </hashTree>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for User-Sync-Back Service" enabled="true">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for Product-Assign Service" enabled="true">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="custom-sync-user-with-oracle" enabled="true">
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-                <collectionProp name="Arguments.arguments"/>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+  &quot;id&quot;: &quot;Pro&quot;,&#xd;
+  &quot;startDate&quot;: 1783888176000&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
               </elementProp>
-              <stringProp name="HTTPSampler.domain">${localServerUrl}</stringProp>
-              <stringProp name="HTTPSampler.port">8080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.domain">${apiServerUrl}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-              <stringProp name="HTTPSampler.path">/api/custom-sync-user-with-oracle?id=${id}&amp;FirstName=${firstName}&amp;LastName=${lastName}&amp;email=${email}&amp;TRADER=TRADER&amp;pp2JqIVydVund2%2F1tARi7Q%3D%3D=pFScUC4lvXvogfvZs0rquA==</stringProp>
+              <stringProp name="HTTPSampler.path">/gateway/product-assign/api/admin/account/${id}/tags</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -281,7 +273,7 @@ if (response.accessToken == null ) {
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                 <collectionProp name="Asserion.test_strings">
-                  <stringProp name="49587">201</stringProp>
+                  <stringProp name="49586">200</stringProp>
                 </collectionProp>
                 <stringProp name="Assertion.custom_message"></stringProp>
                 <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
