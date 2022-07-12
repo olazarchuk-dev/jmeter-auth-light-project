@@ -120,10 +120,10 @@ vars.put(&quot;refreshToken&quot;,String.valueOf(n)); </stringProp>
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-  &quot;firstName&quot;: &quot;dtest8&quot;,&#xd;
-  &quot;lastName&quot;: &quot;dtest8&quot;,&#xd;
-  &quot;email&quot;: &quot;dtest8@mail.com&quot;,&#xd;
-  &quot;fullName&quot;: &quot;dtest8 dtest8&quot;,&#xd;
+  &quot;firstName&quot;: &quot;TraderTest12&quot;,&#xd;
+  &quot;lastName&quot;: &quot;TraderTest12&quot;,&#xd;
+  &quot;email&quot;: &quot;tradertest12@mail.com&quot;,&#xd;
+  &quot;fullName&quot;: &quot;TraderTest12 TraderTest12&quot;,&#xd;
   &quot;password&quot;: &quot;P@ssw0rd&quot;,&#xd;
   &quot;salesForceId&quot;: null,&#xd;
   &quot;role&quot;: &quot;TRADER&quot;,&#xd;

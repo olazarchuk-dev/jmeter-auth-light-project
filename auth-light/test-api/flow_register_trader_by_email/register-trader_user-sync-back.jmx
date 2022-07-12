@@ -121,7 +121,7 @@ vars.put(&quot;refreshToken&quot;,String.valueOf(n)); </stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-              <stringProp name="HTTPSampler.path">/gateway/user/api/private/users/tradertest945@mail.com</stringProp>
+              <stringProp name="HTTPSampler.path">/gateway/user/api/private/users/test12072022@yopmail.com</stringProp>
               <stringProp name="HTTPSampler.method">GET</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -222,7 +222,7 @@ if (response.accessToken == null ) {
               <hashTree/>
             </hashTree>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for User-Sync-Back Service" enabled="true">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller for User-Sync-Back Service" enabled="false">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>

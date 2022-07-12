@@ -88,8 +88,8 @@
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-    &quot;email&quot;: &quot;nabij78711@hekarro.com&quot;,&#xd;
-    &quot;password&quot;: &quot;P@ssword123&quot;&#xd;
+    &quot;email&quot;: &quot;tradertest548@mail.com&quot;,&#xd;
+    &quot;password&quot;: &quot;P@ssw0rd&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
