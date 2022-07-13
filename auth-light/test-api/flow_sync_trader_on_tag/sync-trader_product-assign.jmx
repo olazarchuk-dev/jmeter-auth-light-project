@@ -121,7 +121,7 @@ vars.put(&quot;refreshToken&quot;,String.valueOf(n)); </stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-              <stringProp name="HTTPSampler.path">/gateway/user/api/private/users/tradertest4@mail.com</stringProp>
+              <stringProp name="HTTPSampler.path">/gateway/user/api/private/users/test12072022@yopmail.com</stringProp>
               <stringProp name="HTTPSampler.method">GET</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
